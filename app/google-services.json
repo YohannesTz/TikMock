@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "194823353389",
+    "project_id": "tikmock-a4725",
+    "storage_bucket": "tikmock-a4725.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194823353389:android:0e9fb4baf6868a71c4f4a4",
+        "android_client_info": {
+          "package_name": "com.yohannes.dev.app.tikmock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "194823353389-lvpq6cjg85lnepvm24225dr3vje5rlp0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSIkKbmN172XstuslicMQ2EXcGw03LMnw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "194823353389-lvpq6cjg85lnepvm24225dr3vje5rlp0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
