@@ -1,6 +1,8 @@
 package com.yohannes.dev.app.tikmock
 
 import android.net.Uri
+import android.opengl.Visibility
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +13,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.exoplayer2.ui.PlayerView
+import com.varunest.sparkbutton.SparkButton
 import com.yohannes.dev.app.tikmock.data.VideoItem
 import de.hdodenhof.circleimageview.CircleImageView
 
@@ -91,11 +94,35 @@ class VideoAdapter(private val videoItems: List<VideoItem>) :
                 setMessage("This App was developed by YohannesTz.\n" +
                         "\n https://yohannesTz.github.io")
 
-                setNegativeButton("Okay") { _, _ ->
-                    Toast.makeText(context, "clicked positive button", Toast.LENGTH_SHORT);
-
-                }
+                setNegativeButton("Okay") { _, _ ->  }
             }.create().show()
+        }
+
+        holder.itemView.setOnClickListener(object : DoubleClickListener() {
+            override fun onDoubleClick(v: View?) {
+                holder.likeButton.visibility = View.VISIBLE
+                holder.likeButton.playAnimation()
+                Handler().postDelayed({
+                    holder.likeButton.visibility = View.INVISIBLE
+                }, 700)
+            }
+        })
+    }
+
+    abstract class DoubleClickListener : View.OnClickListener {
+        var lastClickTime: Long = 0
+        override fun onClick(v: View?) {
+            val clickTime = System.currentTimeMillis()
+            if (clickTime - lastClickTime < DOUBLE_CLICK_TIME_DELTA) {
+                onDoubleClick(v)
+            }
+            lastClickTime = clickTime
+        }
+
+        abstract fun onDoubleClick(v: View?)
+
+        companion object {
+            private const val DOUBLE_CLICK_TIME_DELTA: Long = 300 //milliseconds
         }
     }
 
@@ -120,6 +147,7 @@ class VideoAdapter(private val videoItems: List<VideoItem>) :
         var progressBar: ProgressBar
         var checkedImage: ImageView
         var imageButton: ImageButton
+        var likeButton: SparkButton
 
         init {
             itemView.apply {
@@ -135,6 +163,7 @@ class VideoAdapter(private val videoItems: List<VideoItem>) :
                 progressBar = findViewById(R.id.progressBar)
                 checkedImage = findViewById(R.id.checkedImg)
                 imageButton = findViewById(R.id.imageButton)
+                likeButton = findViewById(R.id.like_button)
             }
         }
     }
