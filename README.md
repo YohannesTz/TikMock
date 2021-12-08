@@ -5,10 +5,6 @@ of the official tiktok app so i am calling it "The Mock of Tiktok" ... "TikMock"
 ## Notice
 The Videos and materials used in this app are not mine and are not licensed the same as this repo
 
-## Preview
-[![PREVIEW](https://img.youtube.com/vi/ABhhuxhggO8/0.jpg)](https://www.youtube.com/watch?v=ABhhuxhggO8)
-
-
 # MIT License (MIT)
 
 Copyright (c) Yohannes Tezera
