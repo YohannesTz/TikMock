@@ -3,7 +3,11 @@ It started as a clone of tiktok but i could not get the time and the energy to p
 of the official tiktok app so i am calling it "The Mock of Tiktok" ... "TikMock"
 
 ## Notice
-The Videos and materials used in this app are not mine and are not licensed the same as this repo
+The Videos and materials used in this app are not mine and are not licensed the same as this repo using them 
+in other (including this) in production will require a permission or a license.
+
+## Build
+Check out the current debug build [here](https://drive.google.com/file/d/11gTYB2L3-4MkUOZ6n0g7SDHM4Jb-iV4i/view?usp=sharing)
 
 # MIT License (MIT)
 
